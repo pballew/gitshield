@@ -1,2 +1,2 @@
+wh "git status"
 git status
-git submodule foreach git status

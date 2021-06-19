@@ -1,0 +1,1 @@
+git branch -vv | where {$_ -match '\[origin/.*: gone\]'} | foreach {git branch -D ($_.split(" ", [StringSplitOptions]'RemoveEmptyEntries')[0])}

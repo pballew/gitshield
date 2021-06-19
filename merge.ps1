@@ -1,13 +1,11 @@
-pull
+wh "git pull"
+git pull
 
-echo "=== Merging repo(s) ==="
-$subout = git submodule
-$subout -match "^.*\w+\s+(\w+)\s+.*$" | Out-Null
-for ($i=1; $i -lt $matches.Count; $i++){
-    cd $matches.Get_Item($i)
-    git merge origin/dev
-    cd ..
-}
-git merge origin/dev
+wh "git merge --no-ff -Xignore-space-change $args"
+git merge --no-ff -Xignore-space-change $args
 
-ci "Merge into dev"
+wh "git status"
+git status
+
+wh "git push"
+git push

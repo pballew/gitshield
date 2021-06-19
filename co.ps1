@@ -1,5 +1,5 @@
-git checkout $args[0]
+wh "git checkout $args"
+git checkout $args
+wh "git pull"
 git pull
-git submodule foreach git checkout $args[0]
-git submodule foreach git pull
-pull
+subsync
